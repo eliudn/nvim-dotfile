@@ -21,7 +21,8 @@ return {
         "sqlls",
         "yamlls",
         "jdtls",
-        "omnisharp_mono"
+        "omnisharp_mono",
+        -- "prettierd",
       },
       automatic_installation = true
     })

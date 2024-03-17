@@ -30,6 +30,12 @@ local M = {
       end,
       "LSP rename",
     },]]
+    ["<leader>rn"] = {
+      function ()
+       vim.lsp.buf.rename()
+      end,
+      "Smart rename"
+    },
 
     ["<leader>ca"] = {
       function() vim.lsp.buf.code_action() end, "LSP code action",

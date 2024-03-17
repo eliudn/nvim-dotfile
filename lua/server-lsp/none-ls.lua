@@ -1,5 +1,5 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-require("null-ls").setup({debug = true})
+require("null-ls").setup({ debug = true })
 local null_ls = require("null-ls")
 local b = null_ls.builtins
 
@@ -10,6 +10,7 @@ local opts = {
     b.formatting.phpcsfixer,
     b.diagnostics.mypy,
     b.formatting.black,
+    b.formatting.prettierd,
     require("none-ls.diagnostics.ruff"),
     -- require("none-ls.diagnostics.curlylint"),
 

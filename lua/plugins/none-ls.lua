@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvimtools/none-ls-extras.nvim",
   },
+  event = "VeryLazy",
   opts = function()
     return require "server-lsp.none-ls"
   end,

@@ -44,5 +44,24 @@ lspconfig.omnisharp.setup({
 lspconfig.volar.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'vue', 'json' }
+  filetypes = { 'javascript', 'vue', 'json' }
+})
+
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  -- filetypes = { 'javascript',  }
+})
+lspconfig.tailwindcss.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  -- filetypes = { 'javascript',  }
+})
+
+
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+lspconfig.eslint.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { 'typescript', 'javascript',  }
 })
