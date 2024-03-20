@@ -3,7 +3,7 @@ return {
   dependecies = {
     "neovim/nvim-lspconfig",
   },
-
+  event = "VeryLazy",
   --enabled = false,
   config = function()
     local navic = require("nvim-navic")

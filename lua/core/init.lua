@@ -5,7 +5,7 @@ g.mapleader = " "
 
 ----------------OPTIONS--------------------------
 opt.laststatus = 3
-opt.showmode = true
+opt.showmode = false
 
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
