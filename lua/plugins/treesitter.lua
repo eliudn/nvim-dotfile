@@ -8,7 +8,7 @@ return {
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   build = ":TSUpdate",
   opts = function()
-    opts = require "config.tresitter"
+    local opts = require "config.tresitter"
     opts.ensure_installed = {
       "php",
       "phpdoc",

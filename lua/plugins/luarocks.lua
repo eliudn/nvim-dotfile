@@ -1,10 +1,29 @@
 return {
   {
     "vhyrro/luarocks.nvim",
-    config = function()
-      require("luarocks").setup({})
-    end,
+    priority = 1000, -- We'd like this plugin to load first out of the rest
+    config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
   },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   dependencies = {  "vhyrro/luarocks.nvim"},
+  --   lazy=false,
+  --   version = "*",
+  --   config = true,
+  --   -- put any other flags you wanted to pass to lazy here!
+  --   keys = {
+  --     {
+  --       "<leader>nn",
+  --       "<cmd>Neorg keybind norg core.dirman.new.note<cr>",
+  --       desc = "new note neorg"
+  --     },
+  --     {
+  --       "<leader>ne",
+  --       "<cmd>Neorg<cr>",
+  --       desc = "show neorg"
+  --     },
+  --   }
+  -- },
   {
     "rest-nvim/rest.nvim",
     dependencies = {
@@ -13,6 +32,7 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     ft = "http",
+    event = { "VeryLazy" },
     config = function()
       local rest_nvim = require "rest-nvim"
 
@@ -105,25 +125,3 @@ return {
     end
   }
 }
---[[
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "http",
-        callback = function()
-          local buff = tonumber(vim.fn.expand "<abuf>", 10)
-          vim.keymap.set(
-            "n",
-            "<leader>hn",
-            rest_nvim.run,
-            { noremap = true, buffer = buff, desc = "Run near http request" }
-          )
-          vim.keymap.set(
-            "n",
-            "<leader>hl",
-            rest_nvim.last,
-            { noremap = true, buffer = buff, desc = "Run last http resquest" }
-          )
-          vim.keymap.set("n", "<leader>hp", function()
-            rest_nvim.run(true)
-          end, { noremap = true, buffer = buff, desc = "Preview http curl" })
-        end,
-      }) ]]

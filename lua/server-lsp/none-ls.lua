@@ -9,8 +9,10 @@ local opts = {
     b.diagnostics.phpstan,
     b.formatting.phpcsfixer,
     b.diagnostics.mypy,
+    b.diagnostics.phpcs,
     b.formatting.black,
     b.formatting.prettierd,
+    b.formatting.pint,
     require("none-ls.diagnostics.ruff"),
     -- require("none-ls.diagnostics.curlylint"),
 
